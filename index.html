@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Ramais</title>
+    <link
+      rel="shortcut icon"
+      href="https://placehold.co/32x32/9B2335/FFFFFF?text=F"
+      type="image/x-icon"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* --- Estilos Personalizados --- */
+
+      /* Estilos do Cabeçalho da Tabela (Thead) */
+      .table-custom thead th {
+        background-color: #9b2335; /* Cor solicitada: 9B2335 */
+        color: #f4f5f0; /* Cor da letra solicitada: F4F5F0 */
+        cursor: pointer;
+        user-select: none;
+      }
+
+      /* Garantir que as linhas não tenham estilos padrão do Bootstrap ou do CSS anterior */
+      .table-custom tbody tr {
+        background-color: transparent; /* Zera qualquer cor de fundo padrão */
+      }
+
+      /* Outros Estilos e Ajustes */
+      body {
+        padding-top: 70px;
+      }
+      a {
+        text-decoration: none;
+        color: #000000;
+      }
+      a:hover {
+        color: #9b2335;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav
+      class="navbar fixed-top navbar-expand-lg bg-body-tertiary"
+      data-bs-theme="dark"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="assets/fukuda_logotipo_horizontal_colorido_fundo_escuro.png"
+            alt="Logo"
+            width="200"
+            class="d-inline-block align-text-top"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#ramais">Lista de Ramais</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://fukuda.milldesk.com"
+                target="_blank"
+              >
+                Abrir Chamado
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container my-5">
+      <h1 class="mb-4" id="ramais">Lista de Ramais</h1>
+
+      <div class="row mb-4">
+        <div class="col-md-4">
+          <label for="filterDepartamento" class="form-label"
+            >Filtrar por Departamento/Setor:</label
+          >
+          <select id="filterDepartamento" class="form-select">
+            <option value="">Todos</option>
+            <option value="Agrícola">Agrícola</option>
+            <option value="Ambiental">Ambiental</option>
+            <option value="Comercial">Comercial</option>
+            <option value="Compras">Compras</option>
+			<option value="Conselho">Conselho</option>
+            <option value="Contábil">Contábil</option>
+            <option value="Contábil e Financeiro">Contábil e Financeiro</option>
+            <option value="Custos">Custos</option>
+            <option value="Departamento Pessoal">Departamento Pessoal</option>
+            <option value="Diretoria">Diretoria</option>
+            <option value="Financeiro">Financeiro</option>
+            <option value="Fiscal">Fiscal</option>
+            <option value="Gente e Cultura">Gente e Cultura</option>
+            <option value="Indústria">Indústria</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Qualidade">Qualidade</option>
+            <option value="Recepção">Recepção</option>
+            <option value="Segurança do Trabalho">Segurança do Trabalho</option>
+            <option value="Tecnologia da Informação">
+              Tecnologia da Informação
+            </option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <label for="filterUnidade" class="form-label"
+            >Filtrar por Unidade:</label
+          >
+          <select id="filterUnidade" class="form-select">
+            <option value="">Todas</option>
+            <option value="Fukuda House">Fukuda House</option>
+            <option value="São João">São João</option>
+            <option value="Vitória">Vitória</option>
+            <option value="Vale do Cristal">Vale do Cristal</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-bordered table-custom">
+          <thead>
+            <tr>
+              <th>Usuário</th>
+              <th>Departamento / Setor</th>
+              <th>Número / Celular</th>
+              <th>Unidade</th>
+            </tr>
+          </thead>
+          <tbody id="ramaisTableBody">
+            <tr>
+              <td>Administrativo São João</td>
+              <td>Agrícola</td>
+              <td><a href="tel:241">241</a></td>
+              <td>São João</td>
+            </tr>
+            <tr>
+              <td>Amanda Silva</td>
+              <td>Contábil</td>
+              <td><a href="tel:202">202</a></td>
+              <td>Fukuda House</td>
+            </tr>
+            <tr>
+              <td>Bráulio Santana</td>
+              <td>Agrícola</td>
+              <td><a href="tel:243">243</a></td>
+              <td>São João</td>
+            </tr>
+            <tr>
+              <td>Brunna Oliveira</td>
+              <td>Marketing</td>
+              <td><a href="tel:231">231</a></td>
+              <td>Fukuda House</td>
+            </tr>
+            <tr>
+              <td>Carlos Pinheiro</td>
+              <td>Contábil</td>
+              <td><a href="tel:210">210</a></td>
+              <td>Fukuda House</td>
+            </tr>
+            <tr>
+              <td>Comunicação</td>
+              <td>Gente e Cultura</td>
+              <td><a href="tel:34998264619">(34) 99826-4619</a></td>
+              <td>Fukuda House</td>
+            </tr>
+            <tr>
+              <td>Daniela Sousa</td>
+              <td>Qualidade</td>
+              <td><a href="tel:222">222</a></td>
+              <td>Fukuda House</td>
+            </tr>
+            <tr>
+              <td>Durval Fukuda</td>
+              <td>Diretoria</td>
+              <td><a href="tel:221">221</a></td>
+              <td>Fukuda House</td>
+            </tr>
+            <tr>
+              <td>Gabriel Amorim</td>
+              <td>Indústria</td>
+              <td>
+                <a href="tel:206">206</a> /
+                <a href="tel:34999810800">(34) 99981-0800</a>
+              </td>
+              <td>Fukuda House</td>
+            </tr>
+            <tr>
+              <td>Guilherme Martins</td>
+              <td>Indústria</td>
+              <td><a href="tel:229">229</a></td>
+              <td>Fukuda House</td>
+            </tr>
+            <tr>
+              <td>Gustavo Lima</td>
+              <td>Financeiro</td>
+              <td><a href="tel:233">233</a></td>
+              <td>Fukuda House</td>
+            </tr>
+            <tr>
+              <td>Jaínne Camargos</td>
+              <td>Recepção</td>
+              <td><a href="tel:200">200</a></td>
+              <td>Fukuda House</td>
+            </tr>
+            <tr>
+              <td>Jéssica Bertoldo</td>
+              <td>Gente e Cultura</td>
+              <td><a href="tel:213">213</a></td>
+              <td>Fukuda House</td>
+            </tr>
+            <tr>
+              <td>Kamyla Melo</td>
+              <td>Contábil</td>
+              <td><a href="tel:208">208</a></td>
+              <td>Fukuda House</td>
+            </tr>
+            <tr>
+              <td>João Paulo</td>
+              <td>Departamento Pessoal</td>
+              <td><a href="tel:214">214</a></td>
+              <td>Fukuda House</td>
+            </tr>
+            <tr>
+              <td>Leandro Vieira</td>
+              <td>Tecnologia da Informação</td>
+              <td><a href="tel:217">217</a></td>
+              <td>Fukuda House</td>
+            </tr>
+            <tr>
+              <td>Lissa Fukuda</td>
+              <td>Conselho</td>
+              <td><a href="tel:219">219</a></td>
+              <td>Fukuda House</td>
+            </tr>
+            <tr>
+              <td>Lucas André</td>
+              <td>Manutenção</td>
+              <td><a href="tel:245">245</a></td>
+              <td>São João</td>
+            </tr>
+            <tr>
+              <td>Marcela Caixeta</td>
+              <td>Custos</td>
+              <td><a href="tel:227">227</a></td>
+              <td>Fukuda House</td>
+            </tr>
+            <tr>
+              <td>Marcosuel Reis</td>
+              <td>Indústria</td>
+              <td><a href="tel:230">230</a></td>
+              <td>Fukuda House</td>
+            </tr>
+            <tr>
+              <td>Maria Santos</td>
+              <td>Recursos Humanos</td>
+              <td><a href="tel:228">228</a></td>
+              <td>Fukuda House</td>
+            </tr>
+            <tr>
+              <td>Meire Siqueira</td>
+              <td>Financeiro</td>
+              <td><a href="tel:203">203</a></td>
+              <td>Fukuda House</td>
+            </tr>
+            <tr>
+              <td>Nádia Viana</td>
+              <td>Diretoria</td>
+              <td>
+                <a href="tel:220">220</a> /
+                <a href="tel:34996660938">(34) 99666-0938</a>
+              </td>
+              <td>Fukuda House</td>
+            </tr>
+            <tr>
+              <td>Pollyana Fukuda</td>
+              <td>Diretoria</td>
+              <td><a href="tel:218">218</a></td>
+              <td>Fukuda House</td>
+            </tr>
+            <tr>
+              <td>Daniel Soares</td>
+              <td>Agrícola</td>
+              <td><a href="tel:240">240</a></td>
+              <td>São João</td>
+            </tr>
+            <tr>
+              <td>Recepção - Sem fio</td>
+              <td>Recepção</td>
+              <td><a href="tel:201">201</a></td>
+              <td>Fukuda House</td>
+            </tr>
+            <tr>
+              <td>Sebastião Júnior</td>
+              <td>Agrícola</td>
+              <td><a href="tel:242">242</a></td>
+              <td>São João</td>
+            </tr>
+            <tr>
+              <td>Compras</td>
+              <td>Compras</td>
+              <td><a href="tel:34999830001">(34) 99983-0001</a></td>
+              <td>Fukuda House</td>
+            </tr>
+            <tr>
+              <td>Victoria Santos</td>
+              <td>Departamento Pessoal</td>
+              <td><a href="tel:205">205</a></td>
+              <td>Fukuda House</td>
+            </tr>
+            <tr>
+              <td>Vinícius Reis</td>
+              <td>Compras</td>
+              <td><a href="tel:226">226</a></td>
+              <td>Fukuda House</td>
+            </tr>
+            <tr>
+              <td>Welter Lima</td>
+              <td>Comercial</td>
+              <td>
+                <a href="tel:207">207</a> /
+                <a href="tel:34998315848">(34) 99831-5848</a>
+              </td>
+              <td>Fukuda House</td>
+            </tr>
+			<tr>
+              <td>Mesa 1 - BackOffice</td>
+              <td>Gente e Cultura</td>
+              <td><a href="tel:234">234</a></td>
+              <td>Fukuda House</td>
+            </tr>
+			<tr>
+              <td>Mesa 2 - BackOffice</td>
+              <td>Marketing</td>
+              <td><a href="tel:235">235</a></td>
+              <td>Fukuda House</td>
+            </tr>
+			<tr>
+              <td>Mesa 3 - BackOffice</td>
+              <td>Tecnologia da Informação</td>
+              <td><a href="tel:236">236</a></td>
+              <td>Fukuda House</td>
+            </tr>
+			<tr>
+              <td>Mesa 4 - BackOffice</td>
+              <td>Contábil</td>
+              <td><a href="tel:237">237</a></td>
+              <td>Fukuda House</td>
+            </tr>
+			<tr>
+              <td>Mesa 5 - BackOffice</td>
+              <td>Indústria</td>
+              <td><a href="tel:238">238</a></td>
+              <td>Fukuda House</td>
+            </tr>
+			<tr>
+              <td>Portaria</td>
+              <td>Indústria</td>
+              <td><a href="tel:204">204</a></td>
+              <td>Fukuda House</td>
+            </tr>										
+          </tbody>
+        </table>
+      </div>
+
+      <p><em>Atualizado em 11 de novembro de 2025.</em></p>
+      <p><em>Desenvolvido por: <a href="mailto:ti@fukuda.co">ti@fukuda.co</a></em></p>
+    </div>
+
+    <script>
+      // --- Função 1: Aplica as cores alternadas (Zebra Striping) ---
+      function applyZebraStriping() {
+        const rows = document
+          .getElementById("ramaisTableBody")
+          .querySelectorAll("tr");
+        let visibleRowCount = 0;
+
+        // Define as cores solicitadas
+        const colorOdd = "#FFFFFF"; // Branco para linhas ímpares visíveis
+        const colorEven = "#F4F5F0"; // F4F5F0 para linhas pares visíveis
+
+        rows.forEach((row) => {
+          // Verifica se a linha está visível
+          if (row.style.display !== "none") {
+            // Alterna a cor com base no contador de linhas visíveis
+            if (visibleRowCount % 2 === 0) {
+              // 0, 2, 4... (Primeira linha visível, terceira, etc.)
+              row.style.backgroundColor = colorOdd;
+            } else {
+              // 1, 3, 5... (Segunda linha visível, quarta, etc.)
+              row.style.backgroundColor = colorEven;
+            }
+            visibleRowCount++;
+          } else {
+            // Linhas ocultas (filtradas) não devem ter cor
+            row.style.backgroundColor = "";
+          }
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // --- Seletores ---
+        const filterDepartamento =
+          document.getElementById("filterDepartamento");
+        const filterUnidade = document.getElementById("filterUnidade");
+        const tableBody = document.getElementById("ramaisTableBody");
+        const tableHeaders = document.querySelectorAll("thead th");
+        let rows = Array.from(tableBody.getElementsByTagName("tr"));
+
+        // Estado inicial de ordenação: a coluna 0 (Usuário) será ordenada como "asc"
+        let sortState = {
+          column: 0,
+          direction: "asc",
+        };
+
+        // --- Função 2: Ordenar a Tabela ---
+        function sortTable(columnIndex, initialSort = false) {
+          rows = Array.from(tableBody.getElementsByTagName("tr"));
+          let direction = "asc";
+
+          // Se não for ordenação inicial, aplica a lógica de alternância (clique)
+          if (!initialSort && sortState.column === columnIndex) {
+            direction = sortState.direction === "asc" ? "desc" : "asc";
+          } else if (initialSort) {
+            // Se for ordenação inicial (A-Z), mantém "asc" e atualiza o estado
+            direction = "asc";
+          }
+
+          sortState = { column: columnIndex, direction: direction };
+
+          rows.sort((a, b) => {
+            const cellA = a.cells[columnIndex].textContent.trim();
+            const cellB = b.cells[columnIndex].textContent.trim();
+
+            const comparison = cellA.localeCompare(cellB, "pt-BR", {
+              numeric: true,
+              sensitivity: "base",
+            });
+
+            return direction === "asc" ? comparison : -comparison;
+          });
+
+          rows.forEach((row) => tableBody.appendChild(row));
+
+          applyZebraStriping();
+        }
+
+        // --- Função 3: Atualizar Indicadores Visuais (Setas ▲/▼) ---
+        function updateHeaderIndicators() {
+          tableHeaders.forEach((header, index) => {
+            header.textContent = header.textContent.replace(/ [▲▼]$/, "");
+
+            if (index === sortState.column) {
+              header.textContent += sortState.direction === "asc" ? " ▲" : " ▼";
+            }
+          });
+        }
+
+        // --- Função 4: Filtrar a Tabela ---
+        function filterTable() {
+          rows = Array.from(tableBody.getElementsByTagName("tr"));
+          const departamentoValue = filterDepartamento.value.trim();
+          const unidadeValue = filterUnidade.value.trim();
+
+          rows.forEach((row) => {
+            const departamentoCell = row.cells[1].textContent.trim();
+            const unidadeCell = row.cells[3].textContent.trim();
+
+            const departamentoMatches =
+              !departamentoValue || departamentoCell === departamentoValue;
+            const unidadeMatches =
+              !unidadeValue || unidadeCell === unidadeValue;
+
+            if (departamentoMatches && unidadeMatches) {
+              row.style.display = "";
+            } else {
+              row.style.display = "none";
+            }
+          });
+
+          applyZebraStriping();
+        }
+
+        // --- Event Listeners ---
+        filterDepartamento.addEventListener("change", filterTable);
+        filterUnidade.addEventListener("change", filterTable);
+
+        tableHeaders.forEach((header, index) => {
+          header.addEventListener("click", () => {
+            // Chama sortTable sem o parâmetro initialSort, permitindo a alternância
+            sortTable(index);
+            updateHeaderIndicators();
+          });
+        });
+
+        // --- Inicialização CORRIGIDA ---
+        // 1. Força a ordenação inicial para 'asc' (A-Z)
+        sortTable(0, true);
+
+        // 2. Atualiza os indicadores para refletir a ordenação A-Z
+        updateHeaderIndicators();
+
+        // 3. Aplica o filtro inicial (mostrar todos) e as cores
+        filterTable();
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
